@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+}
+/* color=010409 */
+body{
+    background-color: #010409;
+}
+
+header{
+    position: relative;
+    z-index: 2;
+    height: 8vh;
+    width: 100vw;
+    background-color: #161B22;
+}
+
+aside{
+    position: relative;
+    z-index: 1;
+    width: 20vw;
+    height: 100vh;
+    background-color: #0d1117;
+}
