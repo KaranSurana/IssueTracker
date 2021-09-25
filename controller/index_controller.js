@@ -16,3 +16,7 @@ module.exports.home = function(req,res){
         });
     })
 }
+
+module.exports.newrepo = function(req,res){
+    res.render('newrepo.ejs')
+}
