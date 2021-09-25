@@ -6,23 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Issue Tracker</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="assets/images/titlelogo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="titlelogo.svg" type="image/x-icon">
 </head>
 <body>
     <header>
-        <img src="assets/images/titlelogo.svg" alt="Logo">
+        <img src="images/titlelogo.svg" alt="Logo">
         <a href="/" id="navrepo">Repositories</a>
-        <form action="/" method="POST">
-            <input id="navnewrepo" type="submit" value="New">
-        </form>
+        <a id="navnewrepo" href="/new">New</a>
     </header>
     <aside>
         <span id="repotag">Repositories</span>
-        <form action="/" method="POST">
-            <input id="newrepo" type="submit" value="New">
-        </form>
+        <a id="newrepo">New</a>
         <div id="asiderepo">
-            
+            <% for(var i=0; i<arr.length; i++){%>
+                <div id="content">
+                    <%=arr[i]%>
+
+                </div>
+                
+
+            <%}%>
         </div>
     </aside>
     <main>

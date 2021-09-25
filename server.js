@@ -6,6 +6,10 @@ const app = express();
 
 const port = 7879;
 
+const db = require('./config/mongoose')
+
+const repository = require('./models/repository');
+
 app.set('view engine','ejs');
 
 app.set('views',path.join(__dirname,'views'));
