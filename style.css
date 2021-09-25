@@ -81,3 +81,12 @@ header>img{
     width: 45vw;
     left: 22%;
 }
+
+#asiderepo{
+    border: 2px solid white;
+    position: relative;
+    top: 30px;
+    height: auto;
+    left: 17px;
+    width: 88%;
+}
