@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project</title>
+    <title>Issue Tracker</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="assets/images/titlelogo.svg" type="image/x-icon">
 </head>
 <body>
     <header>
         <img src="assets/images/titlelogo.svg" alt="Logo">
+        <a href="/" id="navrepo">Repositories</a>
+        <form action="/" method="POST">
+            <input id="navnewrepo" type="submit" value="New">
+        </form>
     </header>
     <aside>
         <span id="repotag">Repositories</span>
@@ -18,5 +22,11 @@
             <input id="newrepo" type="submit" value="New">
         </form>
     </aside>
+    <main>
+        <span id="allactivity">All Activity</span>
+        <div id="allrepo">
+            
+        </div>
+    </main>
 </body>
 </html>
