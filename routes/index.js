@@ -4,7 +4,7 @@ var router = express.Router();
 
 const db = require('../config/mongoose')
 
-const repository = require('../models/repository');
+const issue = require('../models/issues');
 
 router.use(express.urlencoded());
 
@@ -21,6 +21,33 @@ router.get('/',homePage.home);
 router.get('/new',homePage.newrepo);
 
 router.post('/newrepo',function(req,res){
+    console.log(req.body)
+    issue.create({
+        issuename: req.body.issue,
+        tag: req.body.tag,
+        name: req.body.authorname
+
+    },function(err,newTask){
+        if(err){
+            console.log(err);
+            console.log("Error in creating a contact");
+            return;
+        }
+
+        issue.find({},function(err,repo){
+            console.log(repo)
+            if(err){
+                console.log("Error In Fetching Repositories");
+                return;
+            }
+            res.render('repository',{
+                arr:repo
+            });
+        })
+    });
+});
+
+router.post('/newissue',function(req,res){
     console.log(req.body)
     repository.create({
         name: req.body.reponame,
