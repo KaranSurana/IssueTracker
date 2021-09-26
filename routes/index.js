@@ -20,8 +20,9 @@ router.get('/',homePage.home);
 
 router.get('/new',homePage.newrepo);
 
+router.get('/repository',homePage.repo);
+
 router.post('/newrepo',function(req,res){
-    console.log(req.body)
     issue.create({
         issuename: req.body.issue,
         tag: req.body.tag,
@@ -35,9 +36,8 @@ router.post('/newrepo',function(req,res){
         }
 
         issue.find({},function(err,repo){
-            console.log(repo)
             if(err){
-                console.log("Error In Fetching Repositories");
+                console.log("Error In Fetching Issues");
                 return;
             }
             res.render('repository',{

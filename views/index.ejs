@@ -42,7 +42,9 @@
                 <div id="maincontent">
                     <span id="mainrepo"><%=arr[i].author.replace(/\s/g, "")+"/"+arr[i].name%></span>
                     <p>Updated Yesterday</p>
-                    <div id="view"><i class="far fa-eye"> <span id="viewtext">View</span></i></div>
+                    <a href=<%="/repository?oid="+arr[i]._id%>>
+                        <div id="view"><i class="far fa-eye"> <span id="viewtext">View</span></i></div>
+                    </a>
                 </div>
                 <div id="line"></div>
             <%}%>

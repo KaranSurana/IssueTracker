@@ -6,7 +6,6 @@ module.exports.home = function(req,res){
 
 
     repository.find({},function(err,repo){
-        console.log(repo)
         if(err){
             console.log("Error In Fetching Repositories");
             return;
@@ -19,4 +18,18 @@ module.exports.home = function(req,res){
 
 module.exports.newrepo = function(req,res){
     res.render('newrepo.ejs')
+}
+
+module.exports.repo = function(req,res){
+    console.log(req.query.oid);
+    repository.find({_id:req.query.oid},function(err,repo){
+        if(err){
+            console.log("Error In Fetching Repositories");
+            return;
+        }
+        res.render('repository',{
+            arr:repo
+        });
+    })
+    
 }
