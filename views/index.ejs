@@ -7,6 +7,7 @@
     <title>Issue Tracker</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="titlelogo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
     <header>
@@ -18,20 +19,33 @@
         <span id="repotag">Repositories</span>
         <a id="newrepo" href="/new">New</a>
         <div id="asiderepo">
+            
             <% for(var i=0; i<arr.length; i++){%>
-                <div id="content">
-                    <%=arr[i]%>
-
-                </div>
-                
+                <a href="/">
+                    <div id="content">
+                        <i class="fas fa-folder"></i>
+                        <%=arr[i].author.replace(/\s/g, "")+"/"+arr[i].name%>
+                        
+                        
+                    </div>
+                </a>
 
             <%}%>
+            
         </div>
     </aside>
     <main>
         <span id="allactivity">All Activity</span>
         <div id="allrepo">
-            
+            <% for(var i=0; i<arr.length; i++){%>
+                <div id="profile"><%=arr[i].author[0]%></div><span id="mainauthor"><%=arr[i].author+" Created A Repository"+" "+arr[i].author+"/"+arr[i].name%></span>
+                <div id="maincontent">
+                    <span id="mainrepo"><%=arr[i].author.replace(/\s/g, "")+"/"+arr[i].name%></span>
+                    <p>Updated Yesterday</p>
+                    <div id="view"><i class="far fa-eye"> <span id="viewtext">View</span></i></div>
+                </div>
+                <div id="line"></div>
+            <%}%>
         </div>
     </main>
 </body>
