@@ -1,3 +1,5 @@
+// getting all the database files required
+
 const mongoose = require('mongoose')
 
 const db = require('../config/mongoose')
@@ -7,6 +9,10 @@ const db = require('../config/mongoose')
 const repository = require('../models/repository');
 
 const issue = require('../models/issues');
+
+// creating controllers for routes action
+
+// index routes controller
 
 module.exports.home = function(req,res){
 
@@ -22,10 +28,12 @@ module.exports.home = function(req,res){
     })
 }
 
+
+
 module.exports.newrepo = function(req,res){
     res.render('newrepo.ejs')
 }
-
+// displaying all the repositories and issues on the used route
 module.exports.repo = function(req,res){
     
     repository.find({_id:req.query.oid},function(err,repo){

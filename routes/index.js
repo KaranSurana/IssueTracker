@@ -1,3 +1,8 @@
+
+// routing all the urls using routes in express
+
+// this file contains all the routes
+
 var express = require('express');
 
 var router = express.Router();
@@ -5,6 +10,8 @@ var router = express.Router();
 const mongoose = require('mongoose');
 
 var ObjectID = require('mongodb').ObjectID;
+
+// getting database files
 
 const db = require('../config/mongoose')
 
@@ -27,6 +34,8 @@ router.get('/', homePage.home);
 router.get('/new', homePage.newrepo);
 
 router.get('/repository', homePage.repo);
+
+// creating a new repo route
 
 router.post('/newrepo', function (req, res) {
     repository.create({
@@ -54,7 +63,7 @@ router.post('/newrepo', function (req, res) {
 });
 
 
-
+// creating issue route
 router.post('/issues', function (req, res) {
 
 

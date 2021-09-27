@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+// creating an issue schema in mongodb
 const issuesSchema = new mongoose.Schema({
     issuename: {
         type: String,

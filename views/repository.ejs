@@ -10,7 +10,9 @@
     <title>Respository</title>
 </head>
 <body>
+    <!-- repository default page -->
     <h1><%=hel[0].name%></h1>
+    <!-- all the details of repository -->
     <div id="allrepo">
             <div id="profile">
                 <%=hel[0].author[0]%>
@@ -28,6 +30,7 @@
             </div>
             <div id="line"></div>
     </div>
+    <!-- all the issues of the current repository -->
     <div id="issues">
         <span id="issuehead">Issues</span>
         <form action="/issues" method="post">
