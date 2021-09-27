@@ -22,32 +22,32 @@ router.use(express.static('views'));
 
 const homePage = require('../controller/index_controller');
 
-router.get('/',homePage.home);
+router.get('/', homePage.home);
 
-router.get('/new',homePage.newrepo);
+router.get('/new', homePage.newrepo);
 
-router.get('/repository',homePage.repo);
+router.get('/repository', homePage.repo);
 
-router.post('/newrepo',function(req,res){
+router.post('/newrepo', function (req, res) {
     repository.create({
         author: req.body.authorname,
         description: req.body.description,
         name: req.body.reponame
 
 
-    },function(err,newTask){
-        if(err){
+    }, function (err, newTask) {
+        if (err) {
             console.log(err);
             console.log("Error in creating a Repository");
             return;
         }
-        repository.find({},function(err,repo){
-            if(err){
+        repository.find({}, function (err, repo) {
+            if (err) {
                 console.log("Error In Fetching Repositories");
                 return;
             }
-            res.render('index',{
-                arr:repo,
+            res.render('index', {
+                arr: repo,
             });
         })
     });
@@ -55,44 +55,53 @@ router.post('/newrepo',function(req,res){
 
 
 
-router.post('/issues',function(req,res){
-    res.render("issues",{
-        postid:req.body.repoid
-    })
-})
-
-router.post("/newissue",function(req,res){
-    issue.create({
-        issuename: req.body.issue,
-        tag: req.body.tag,
-        name: req.body.authorname,
-        repository: req.body.repoid
+router.post('/issues', function (req, res) {
 
 
-    },function(err,newTask){
-        if(err){
-            console.log(err);
-            console.log("Error in creating a Issue");
+    repository.find({ _id: req.body.repoid }, function (err, repo) {
+        if (err) {
+            console.log("Error In Fetching Repositories");
             return;
         }
-        issue.find({repository:mongoose.Types.ObjectId(req.body.repoid)},function(err,issues){
-            if(err){
-                console.log("Error In Fetching Issue");
+        res.render('issues', {
+            hel: repo,
+            postid: req.body.repoid
+        })
+    })
+
+    router.post("/newissue", function (req, res) {
+        issue.create({
+            issuename: req.body.issue,
+            tag: req.body.tag,
+            name: req.body.authorname,
+            repository: req.body.repoid
+
+
+        }, function (err, newTask) {
+            if (err) {
+                console.log(err);
+                console.log("Error in creating a Issue");
                 return;
             }
-            repository.find({_id:req.body.repoid},function(err,repo){
-                if(err){
-                    console.log("Error In Fetching Repositories");
+            issue.find({ repository: mongoose.Types.ObjectId(req.body.repoid) }, function (err, issues) {
+                if (err) {
+                    console.log("Error In Fetching Issue");
                     return;
                 }
-            res.render('repository',{
-                hel:repo,
-                arr:issues,
-                repoid:req.body.repoid
-            })
+                repository.find({ _id: req.body.repoid }, function (err, repo) {
+                    if (err) {
+                        console.log("Error In Fetching Repositories");
+                        return;
+                    }
+                    res.render('repository', {
+                        hel: repo,
+                        arr: issues,
+                        repoid: req.body.repoid
+                    })
+                })
+            });
         })
-    });
-})
+    })
 })
 
 module.exports = router;

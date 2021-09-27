@@ -58,3 +58,7 @@ input{
     left: 38%;
 }
 
+#special{
+    color: #58A6FF;
+    display: inline-block;
+}

@@ -51,5 +51,24 @@
             <%}%>
         </div>
     </main>
+    <div id="explore" style="position: relative; left: 1200px; top: -1510px;">
+        <span id="repotag" style="position: relative; left: 15px;">Explore Repositories</span>
+        <div id="asiderepo">
+            
+            <% for(var i=0; i<arr.length/2; i++){%>
+                <a href=<%="/repository?oid="+arr[i]._id%>>
+                    <div id="content">
+                        
+                        <i class="fas fa-folder"></i>
+                        <%=arr[i].author.replace(/\s/g, "")+"/"+arr[i].name%>
+                        
+                        
+                    </div>
+                </a>
+
+            <%}%>
+            
+        </div>
+    </div>
 </body>
 </html>
