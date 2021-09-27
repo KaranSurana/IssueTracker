@@ -12,6 +12,10 @@ const issuesSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
+    },
+    repository:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Repository'
     }
 })
 

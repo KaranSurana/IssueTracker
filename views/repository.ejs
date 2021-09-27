@@ -6,20 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="repository.css">
     <link rel="shortcut icon" href="titlelogo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <title>Respository</title>
 </head>
 <body>
-    <h1>Repository Name</h1>
+    <h1><%=hel[0].name%></h1>
     <div id="allrepo">
-        <% for(var i=0; i<arr.length; i++){%>
-            <div id="profile"><%=arr[i].author[0]%></div><span id="mainauthor"><%=arr[i].author+" Created A Repository"+" "+arr[i].author+"/"+arr[i].name%></span>
+            <div id="profile">
+                <%=hel[0].author[0]%>
+            </div>
+            <span id="mainauthor">
+                <%=hel[0].author+" Created A Repository"+" "+hel[0].author+"/"+hel[0].name%>
+            </span>
             <div id="maincontent">
-                <span id="mainrepo"><%=arr[i].author.replace(/\s/g, "")+"/"+arr[i].name%></span>
+                <span id="mainrepo"><%=hel[0].author.replace(/\s/g, "")+"/"+hel[0].name%></span>
                 <p>Updated Yesterday</p>
-                <div id="view"><i class="far fa-eye"> <span id="viewtext">View</span></i></div>
+                <a href="/">
+                    <div id="view"><i class="fas fa-undo-alt"></i> <span id="viewtext">Back</span></i></div>
+                </a>
+
             </div>
             <div id="line"></div>
-        <%}%>
     </div>
+    <div id="issues">
+        <span id="issuehead">Issues</span>
+        <form action="/issues" method="post">
+            <input type="hidden" name="repoid" value=<%=repoid%>>
+            <input id="issuebutton" type="submit" value="New Issue">
+        </form>
+    </div>
+    <% for(var i=0; i<arr.length; i++){%>
+        <div id="issuecontent">
+            <p><%=arr[i].name%></p>
+            <span><%=arr[i].issuename%></span> 
+            <span id="tag"><%=arr[i].tag%></span>
+            
+        </div>
+    <%}%>
 </body>
 </html>

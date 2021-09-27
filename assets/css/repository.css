@@ -89,12 +89,14 @@ header>img{
 }
 
 #allrepo{
-    
+    border: 2px solid rgba(255, 255, 255, 0.349);
+    border-radius: 5px;
+    padding: 10px;
     position: relative;
     top: 50px;
     height: auto;
     width: 45vw;
-    left: 22%;
+    left: 25%;
 }
 
 #asiderepo{
@@ -175,6 +177,7 @@ header>img{
     background-color: rgba(255, 255, 255, 0.089);
     border-radius: 5px;
     width: 55px;
+    height: 22px;
     padding-bottom: 2px;
     padding-left: 5px;
     left: 480px;
@@ -186,9 +189,16 @@ header>img{
     cursor: pointer;
 }
 
+#view>i{
+    font-size: x-small;
+    position: relative;
+    top: -2px;
+}
+
 #viewtext{
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     font-size: small;
+    padding-left: 2px;
     position: relative;
     top: -1.5px;
     cursor: pointer;
@@ -196,7 +206,7 @@ header>img{
 
 #line{
     margin-top: 25px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.185);
+    
     margin-bottom: 20px;
 }
 
@@ -213,3 +223,52 @@ h1{
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
+#issuehead{
+    position: relative;
+    top: 60px;
+    left: 28%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: xx-large;
+}
+
+#issuebutton{
+    background-color: #238636;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    position: relative;
+    left: 63%;
+    top: 30px;
+}
+
+#issuecontent{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    position: relative;
+    top: 80px;
+    left: 415px;
+    border: 1px solid white;
+    width: 620px;
+    height: 60px;
+    padding-left: 20px;
+    padding-top: 10px;
+    border-radius: 7px;
+}
+
+#tag{
+    color: #0b64eb;
+    font-size: smaller;
+    border: 2px solid #135CC8;
+    border-radius: 7px;
+    padding: 1px 4px 4px 4px;
+    margin-top: -10px;
+    position: absolute;
+    left: 500px;
+}
+a{
+    text-decoration: none;
+}
+a:visited { text-decoration: none; color:white; }
+a:hover { text-decoration: none; color:white; }
+a:focus { text-decoration: none; color:white; }
+a:hover, a:active { text-decoration: none; color:white }
